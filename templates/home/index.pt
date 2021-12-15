@@ -1,0 +1,92 @@
+<div metal:use-macro="load: _layout.pt">
+    <div metal:fill-slot="content" tal:omit-tag="True">
+
+        <!-- <h1>Fake PyPi</h1>
+        <div>User: ${user_name}</div> -->
+
+
+        <div class="row" id="home-banner">
+            <div class="container">
+                <h2>Find, install and publish Python packages with the Python Package Index</h2>
+
+                <form class="d-flex">
+                    <input class="form-control me-2 p-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+
+                <h6>Or <a href="#">browse projects</a></h6>
+            </div>
+        </div>
+
+        <div class="row d-none d-lg-block d-xl-block" id="statistics">
+            <div class="container">
+                <p>${'{:,}'.format(package_count)} projects</p>
+                <p>${'{:,}'.format(release_count)} releases</p>
+                <p>${'{:,}'.format(files_count)} files</p>
+                <p>${'{:,}'.format(user_count)} users</p>
+            </div>
+        </div>
+
+        <div class="row" id="about-pypi">
+            <div class="container">
+                <div>
+                    <img class="float-start d-none d-lg-block d-xl-block" src="/static/images/twitter.6fecba6f.jpg" alt="">
+                    <div>
+                        <p class="h5 p-5">The Python Package Index (PyPI) is a repository of software for the Python programming language.</p>
+                        <p>PyPI helps you find and install software developed and shared by the Python community. Learn about installing packages.</p>
+                        <p>Package authors use PyPI to distribute their software. Learn how to package your Python code for PyPI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="site-container">
+            <div class="container">
+                <div class="row p-8">
+
+                    <div class="col-sm-6">
+                        <p class="h5">Trending projects</p>
+                        <p>Trending projects as downloaded by the community</p>
+                        <div class="card mb-3" tal:repeat="p packages">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="https://pypi.org/project/${p.id}">${p.id}</a>
+                            </h5>
+                            <p class="card-text">${p.summary}</p>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <p class="h5">New releases</p>
+                        <p>Hot off the press: the newest project releases</p>
+                        <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                        </div>
+                        <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                        </div>
+                        <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
